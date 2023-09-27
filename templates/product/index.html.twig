@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+{{title}}
+{{prodcutObject.id}}
+{{prodcutObject.name}}
+{{prodcutObject.price}}
+{%if productsArray is emty %}
+<table>
+<tr>
+<th>Id </th>
+<th>Name </th>
+<th> Price </th>
+</tr>
+{% for product in productsArray%}
+<tr>
+<td>{{product.id}} </td>
+<td>{{product.name}}</td>
+<td>{{product.price}}</td>
+<p> there are no products </p>
+{%endif%}
+{% endblock %}

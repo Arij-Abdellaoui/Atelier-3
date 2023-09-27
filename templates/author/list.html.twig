@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des auteurs</title>
+</head>
+<body>
+    <h1>Liste des auteurs</h1>
+    <!-- Insérez ici la liste des auteurs -->
+    {% if authors is not empty %}
+    <!-- Affichez la liste des auteurs ici -->
+{% else %}
+    <p>Aucun auteur trouvé.</p>
+{% endif %}
+{{ author.username|upper }}
+<p>Nombre total d'auteurs : {{ authors|length }}</p>
+<p>Nombre total de livres de tous les auteurs : {{ totalBooksCount }}</p>
+<li><a href="{{ path('author_details', {'id': author.id}) }}">Détails</a> - {{ author.username|upper }}</li>
+
+</body>
+</html>
